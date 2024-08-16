@@ -1,6 +1,6 @@
 <?php
 // URL для запроса
-$url = 'https://tender.rusal.ru/Tenders/Load'; // Замените на URL найденного запроса
+$url = 'https://tender.rusal.ru/Tenders/Load'; 
 $params = [
     'sortAsc' => 'true', // Порядок сортировки
     'sortColumn' => 'RequestReceivingBeginDate', // Столбец для сортировки
@@ -10,10 +10,10 @@ $params = [
 $options = [
     'http' => [
         'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST', // или 'GET', в зависимости от запроса
+        'method'  => 'POST', 
         'content' => http_build_query($params),
     ],
-];
+]
 
 $context = stream_context_create($options);
 $response = file_get_contents($url, false, $context);
